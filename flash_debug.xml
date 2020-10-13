@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="flash_debug" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" PROGRAM_PARAMS="-device nRF52840_xxAA -strict -timeout 0 -noreset -nogui -if swd -speed 8000 -endian little -s -silent" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmake_ble_app_blinky_alt" TARGET_NAME="cmake_ble_app_blinky_alt.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="cmake_ble_app_blinky_alt" RUN_TARGET_NAME="cmake_ble_app_blinky_alt.elf">
+    <custom-gdb-server version="1" gdb-connect="tcp::2331" executable="c:\Program Files (x86)\SEGGER\JLink_V644c\JLinkGDBServerCL.exe" warmup-ms="0" download-type="NONE" reset-cmd="monitor reset" reset-after-download="true" />
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>
