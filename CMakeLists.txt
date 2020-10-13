@@ -13,6 +13,7 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 #sdk settings
 set(SDK_ROOT ${CMAKE_SOURCE_DIR}/../nRF5_SDK_17.0.2_d674dde) #[[todo verify if it's correct]]
+set(SDK_HEADER_ROOT ${CMAKE_SOURCE_DIR}/sdk_include)
 set(NRF_TOOLS "C:\\Program Files\\Nordic Semiconductor\\nrf-command-line-tools\\bin\\") #[[todo verify if it's correct]]
 
 # project settings
@@ -20,8 +21,8 @@ project(<project_name> #[[todo]] C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
 include_directories(${CMAKE_SOURCE_DIR}/config)
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/file.ld #[[todo]])
-set(SOFT_DEVICE_FILE ${SDK_ROOT}/components/softdevice/s140/hex/s140_nrf52_7.2.0_softdevice.hex#[[todo verify if it's correct]])
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/file.ld) #[[todo]]
+set(SOFT_DEVICE_FILE ${SDK_ROOT}/components/softdevice/s140/hex/s140_nrf52_7.2.0_softdevice.hex) #[[todo verify if it's correct]]
 
 # uncomment to mitigate c++17 absolute addresses warnings
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register")
