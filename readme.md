@@ -1,17 +1,22 @@
 How to convert a standard nRF5 SDK example into a CLion-compatible CMake project
 ======
-1. File structure
-   + Create a project folder
-   + Copy `main.c` -> `src/main.c`, `Makefile`->`Makefile.txt`, `config/` ->`config/`, `name.ld` files
-   from the example folder
-1. Templates   
-   + Copy templates`SDK_NRF5.cmake.template.txt` -> `SDK_NRF5.cmake`,
-   `CMakeLists.template.txt` -> `CMakeLists.txt`
-   + Go through all `Todo` comments in those two files and fill up the information. 
+1. Create a project folder and `cd` there  
+1. Download content of this repository to the project folder
+   + `git clone --depth=1 https://github.com/elmot/clion_cmake_nRF5_stub.git .`
+   + Delete `.git` folder   
+1. Copy files from the example to the project folder
+   + `main.c` -> `src/main.c`
+   + `Makefile`->`Makefile.txt`
+   + `config/` ->`config/`
+   + `<some_name>.ld` -> `<some_name>.ld`
+1. Open the project with CLion    
+1. Go through all `Todo` comments in those two files and fill up the information. 
       Use `TODO` tool window for that
 1. CLion settings
    + Open `File` -> `Settings` -> `Build, Execution, Deployment` -> `Toolchains` and 
    setup a toolchain out of `MinGW` and `arm-none-eabi-gcc`
+   + Open `File` -> `Settings` -> `Build, Execution, Deployment` -> `CMake`, create desired profiles
+   and and set correct toolchain. For every profile set toolchain file via `CMake options:` as `-DCMAKE_TOOLCHAIN_FILE=nrf5_toolchain.cmake` 
    + Right-click CMakeLists.txt and select `Load CMake project`
    + Open `File` -> `Settings` -> `Build, Execution, Deployment` -> `CMake`, create desired profiles
    and and set correct toolchain

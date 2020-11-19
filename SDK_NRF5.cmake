@@ -6,27 +6,27 @@
 #   - replace $(SDK_ROOT) -> ${SDK_HEADER_ROOT} for includes
 #   - throw away config directory name
 #   - throw away project-specific files names
-include_directories(
+set(NRF5_SDK_HEADERS
         #[[todo list SDK include directories here]]
 )
 
-file(GLOB SDK_SOURCES
+set(SDK_SOURCES
         #[[todo list SDK source files here]]
 )
 
-#[[Todo list of defined symbols]]
-add_definitions(-DSOFTDEVICE_PRESENT)
+set(PROJECT_DEFINITIONS
+-DSOFTDEVICE_PRESENT
+        #[[todo list of defined symbols]]
+)
 
-#[[Todo list of compiler switches]]
-add_compile_options(-mcpu=cortex-m4 -mthumb -mthumb-interwork -mabi=aapcs)
-add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
-add_compile_options(-ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums)
-add_compile_options(-Wall -Werror)
+set(PROJECT_COMMON_BUILD_OPTIONS
+#[[Todo list of switches for compiler and linker]]
+-mcpu=cortex-m4 -mthumb -mthumb-interwork -mabi=aapcs
+-mfloat-abi=hard -mfpu=fpv4-sp-d16
+)
 
+set(PROJECT_COMPILE_OPTIONS
 #[[Todo list of linker switches]]
-add_link_options(-mcpu=cortex-m4 -mthumb -mthumb-interwork -mabi=aapcs)
-add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
-add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
-add_link_options(-T ${LINKER_SCRIPT} -L${SDK_ROOT}/modules/nrfx/mdk --specs=nano.specs)
-add_link_options(-lc -lnosys -lm)
-
+-ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums
+-Wall -Werror
+)
