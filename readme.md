@@ -17,6 +17,10 @@ How to convert a standard nRF5 SDK example into a CLion-compatible CMake project
    setup a toolchain out of `MinGW` and `arm-none-eabi-gcc`
    + Open `File` -> `Settings` -> `Build, Execution, Deployment` -> `CMake`, create desired profiles
    and and set correct toolchain. For every profile set toolchain file via `CMake options:` as `-DCMAKE_TOOLCHAIN_FILE=nrf5_toolchain.cmake` 
+   + Right-click CMakeLists.txt and select `Load CMake project`
+   + Open `File` -> `Settings` -> `Build, Execution, Deployment` -> `CMake`, create desired profiles
+   and and set correct toolchain
+   + Select `copy_sdk_headers` run configuration and build it 
    + Reset CMake caches, wait until indexing is done  
    + Create a run configuration of type "Embedded GDB Server" with parameters:
       * Name: `flash_debug`
