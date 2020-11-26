@@ -2,6 +2,21 @@ cmake_minimum_required(VERSION 3.17)
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
 
+##########################
+#  Toolchain definition  #
+##########################
+set(CMAKE_C_COMPILER arm-none-eabi-gcc)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
+set(CMAKE_AR arm-none-eabi-ar)
+find_program(CMAKE_OBJCOPY arm-none-eabi-objcopy)
+find_program(CMAKE_OBJDUMP arm-none-eabi-objdump)
+find_program(SIZE arm-none-eabi-size)
+find_program(NRFJPROG nrfjprog PATHS "C:/Program Files/Nordic Semiconductor/nrf-command-line-tools/bin1")
+#################################
+#  End of Toolchain definition  #
+#################################
+
 #sdk settings
 set(SDK_ROOT ${CMAKE_SOURCE_DIR}/../nRF5_SDK_17.0.2_d674dde) #[[todo verify if it's correct]]
 set(SDK_HEADER_ROOT ${CMAKE_SOURCE_DIR}/sdk_include)
